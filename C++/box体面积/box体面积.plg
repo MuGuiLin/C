@@ -1,0 +1,26 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: box体面积 - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\Users\ADMINI~1\AppData\Local\Temp\RSPEDC2.tmp" with contents
+[
+/nologo /MLd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_CONSOLE" /D "_MBCS" /Fp"Debug/box体面积.pch" /YX /Fo"Debug/" /Fd"Debug/" /FD /GZ  /c 
+"D:\C++\上机\box体面积\index.cpp"
+]
+Creating command line "cl.exe @C:\Users\ADMINI~1\AppData\Local\Temp\RSPEDC2.tmp" 
+<h3>Output Window</h3>
+Compiling...
+index.cpp
+D:\C++\上机\box体面积\index.cpp(81) : warning C4183: 'Stedent': member function definition looks like a ctor, but name does not match enclosing class
+
+
+
+<h3>Results</h3>
+index.obj - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

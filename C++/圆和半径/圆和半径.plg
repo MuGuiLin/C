@@ -1,0 +1,40 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: Բ�Ͱ뾶 - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\Users\ADMINI~1\AppData\Local\Temp\RSP3E15.tmp" with contents
+[
+/nologo /MLd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_CONSOLE" /D "_MBCS" /Fp"Debug/Բ�Ͱ뾶.pch" /YX /Fo"Debug/" /Fd"Debug/" /FD /GZ  /c 
+"D:\C++\Բ�Ͱ뾶\main.cpp"
+]
+Creating command line "cl.exe @C:\Users\ADMINI~1\AppData\Local\Temp\RSP3E15.tmp" 
+Creating temporary file "C:\Users\ADMINI~1\AppData\Local\Temp\RSP3E26.tmp" with contents
+[
+kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib  kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /subsystem:console /incremental:yes /pdb:"Debug/Բ�Ͱ뾶.pdb" /debug /machine:I386 /out:"Debug/Բ�Ͱ뾶.exe" /pdbtype:sept 
+".\Debug\main.obj"
+]
+Creating command line "link.exe @C:\Users\ADMINI~1\AppData\Local\Temp\RSP3E26.tmp"
+<h3>Output Window</h3>
+Compiling...
+main.cpp
+D:\C++\Բ�Ͱ뾶\main.cpp(36) : error C2259: 'Trapezoid' : cannot instantiate abstract class due to following members:
+        D:\C++\Բ�Ͱ뾶\main.cpp(12) : see declaration of 'Trapezoid'
+D:\C++\Բ�Ͱ뾶\main.cpp(36) : warning C4259: 'double __thiscall Shape::Area(void)' : pure virtual function was not defined
+        D:\C++\Բ�Ͱ뾶\main.cpp(8) : see declaration of 'Area'
+D:\C++\Բ�Ͱ뾶\main.cpp(36) : error C2259: 'Trapezoid' : cannot instantiate abstract class due to following members:
+        D:\C++\Բ�Ͱ뾶\main.cpp(12) : see declaration of 'Trapezoid'
+D:\C++\Բ�Ͱ뾶\main.cpp(36) : warning C4259: 'double __thiscall Shape::Area(void)' : pure virtual function was not defined
+        D:\C++\Բ�Ͱ뾶\main.cpp(8) : see declaration of 'Area'
+ִ�� cl.exe ʱ����.
+
+
+
+<h3>Results</h3>
+Բ�Ͱ뾶.exe - 1 error(s), 0 warning(s)
+</pre>
+</body>
+</html>
