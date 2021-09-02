@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <stdio.h>
 
 using namespace std;
 
@@ -14,7 +15,7 @@ class sr{
 			r = k;
 		};
 		void print(){
-			cout << "生日：" << l << "年，" << y << "月，" << r << endl;
+			cout << "，生日：" << l << "年，" << y << "月，" << r << endl;
 		}
 
 };
@@ -31,7 +32,7 @@ class ren{
 			six = s;
 		};
 		void show(){
-			cout << name << six;
+			cout << name << "，" << six;
 			age.print();
 		}
 };
@@ -55,4 +56,7 @@ int main(void){
 
 	circle c1(5.6);
 	cout << "圆的面积：" << c1.GetArea() << endl;
+
+	cout << endl;
+	system("PAUSE");
 };

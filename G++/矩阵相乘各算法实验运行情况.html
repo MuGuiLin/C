@@ -1,0 +1,238 @@
+<!-- THIS EXAMPLE WAS DOWNLOADED FROM https://echarts.apache.org/examples/zh/editor.html?c=pie-rich-text-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>矩阵相乘各算法实验运行情况</title>
+</head>
+
+<body>
+    <section id="container" style="height: 100vh"></section>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
+    <!-- Uncomment this line if you want to dataTool extension
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5/dist/extension/dataTool.min.js"></script>
+        -->
+    <!-- Uncomment this line if you want to use gl extension
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts-gl@2/dist/echarts-gl.min.js"></script>
+        -->
+    <!-- Uncomment this line if you want to echarts-stat extension
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts-stat@latest/dist/ecStat.min.js"></script>
+        -->
+    <!-- Uncomment this line if you want to use map
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5/map/js/china.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5/map/js/world.js"></script>
+        -->
+    <!-- Uncomment these two lines if you want to use bmap extension
+        <script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=<Your Key Here>"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5/dist/extension/bmap.min.js"></script>
+        -->
+
+    <script type="text/javascript">
+        const base = {
+            title: {
+                fontSize: 15,
+                padding: [04, 0, 0, 0],
+                color: '#eee',
+                align: 'center'
+            },
+            weatherHead: {
+                color: '#333',
+                height: 24,
+                align: 'left'
+            },
+            valueHead: {
+                color: '#333',
+                width: 20,
+                padding: [0, 20, 0, 30],
+                align: 'center'
+            },
+            hr: {
+                borderColor: '#777',
+                width: '100%',
+                borderWidth: 0.5,
+                height: 0
+            },
+            key: {
+                height: 20,
+                align: 'left',
+                padding: [5, 10, 0, 10],
+
+            },
+            value: {
+                width: 2,
+                padding: [10, 10, 0, 10],
+                align: 'left'
+            },
+        };
+        const option = {
+            color: ['#ff005e', '#f5c02c', '#006bff', '#24ab45'],
+            title: {
+                text: '矩阵相乘各算法实验运行情况',
+                subtext: '单位：秒',
+                left: 'center'
+            },
+            tooltip: {
+                trigger: 'item',
+                formatter: '{a} <br/>{b} : {c} ({d}%)'
+            },
+            legend: {
+                bottom: 10,
+                left: 'center',
+                data: ['SSE 策略', '分片策略', '缓存策略', '串行策略']
+            },
+            series: [
+                {
+                    type: 'pie',
+                    radius: '65%',
+                    center: ['50%', '50%'],
+                    selectedMode: 'single',
+                    data: [
+                        {
+                            backgroundColor: 'red',
+                            value: 5.011,
+                            name: '串行策略',
+                            label: {
+                                formatter: [
+                                    '{title|{b}}{abg|}',
+                                    '   {weatherHead|次 数}  {valueHead|耗 时}',
+                                    '{hr|}',
+                                    '{key|第1次}{value|5.036秒}',
+                                    '{key|第2次}{value|4.939秒}',
+                                    '{key|第3次}{value|4.927秒}',
+                                    '{key|第4次}{value|5.122秒}',
+                                    '{key|第5次}{value|4.987秒}',
+                                ].join('\n'),
+                                backgroundColor: '#EEE',
+                                borderColor: '#ff005e',
+                                borderWidth: 2,
+                                borderRadius: 4,
+                                shadowColor: 'rgba(0, 0, 0, 0.5)',
+                                shadowBlur: 6,
+                                rich: {
+                                    abg: {
+                                        backgroundColor: '#ff005e',
+                                        width: '100%',
+                                        align: 'right',
+                                        height: 25,
+                                        borderRadius: [4, 4, 0, 0]
+                                    },
+                                    ...base
+                                }
+                            }
+                        },
+                        {
+                            value: 2.671, name: '缓存策略',
+                            label:
+                            {
+                                formatter: [
+                                    '{title|{b}}{abg|}',
+                                    '   {weatherHead|次 数}  {valueHead|耗 时}',
+                                    '{hr|}',
+                                    '{key|第1次}{value|5.036秒}',
+                                    '{key|第2次}{value|4.939秒}',
+                                    '{key|第3次}{value|4.927秒}',
+                                    '{key|第4次}{value|5.122秒}',
+                                    '{key|第5次}{value|4.987秒}',
+                                ].join('\n'),
+                                backgroundColor: '#EEE',
+                                borderColor: '#f5c02c',
+                                borderWidth: 2,
+                                borderRadius: 4,
+                                shadowColor: 'rgba(0, 0, 0, 0.5)',
+                                shadowBlur: 6,
+                                rich: {
+                                    abg: {
+                                        backgroundColor: '#f5c02c',
+                                        width: '100%',
+                                        align: 'right',
+                                        height: 25,
+                                        borderRadius: [4, 4, 0, 0]
+                                    },
+                                    ...base
+                                }
+                            }
+                        },
+                        {
+                            value: 1.588, name: '分片策略',
+                            label:
+                            {
+                                formatter: [
+                                    '{title|{b}}{abg|}',
+                                    '   {weatherHead|次 数}  {valueHead|耗 时}',
+                                    '{hr|}',
+                                    '{key|第1次}{value|5.036秒}',
+                                    '{key|第2次}{value|4.939秒}',
+                                    '{key|第3次}{value|4.927秒}',
+                                    '{key|第4次}{value|5.122秒}',
+                                    '{key|第5次}{value|4.987秒}',
+                                ].join('\n'),
+                                backgroundColor: '#EEE',
+                                borderColor: '#006bff',
+                                borderWidth: 2,
+                                borderRadius: 4,
+                                shadowColor: 'rgba(0, 0, 0, 0.5)',
+                                shadowBlur: 6,
+                                rich: {
+                                    abg: {
+                                        backgroundColor: '#006bff',
+                                        width: '100%',
+                                        align: 'right',
+                                        height: 25,
+                                        borderRadius: [4, 4, 0, 0]
+                                    },
+                                    ...base
+                                }
+                            }
+                        },
+                        {
+                            value: 1.245, name: 'SSE 策略',
+                            label: {
+                                formatter: [
+                                    '{title|{b}}{abg|}',
+                                    '   {weatherHead|次 数}  {valueHead|耗 时}',
+                                    '{hr|}',
+                                    '{key|第1次}{value|5.036秒}',
+                                    '{key|第2次}{value|4.939秒}',
+                                    '{key|第3次}{value|4.927秒}',
+                                    '{key|第4次}{value|5.122秒}',
+                                    '{key|第5次}{value|4.987秒}',
+                                ].join('\n'),
+                                backgroundColor: '#EEE',
+                                borderColor: '#24ab45',
+                                borderWidth: 2,
+                                borderRadius: 4,
+                                shadowColor: 'rgba(0, 0, 0, 0.5)',
+                                shadowBlur: 6,
+                                rich: {
+                                    abg: {
+                                        backgroundColor: '#24ab45',
+                                        width: '100%',
+                                        align: 'right',
+                                        height: 25,
+                                        borderRadius: [4, 4, 0, 0]
+                                    },
+                                    ...base
+                                }
+                            }
+                        }
+                    ],
+                    emphasis: {
+                        itemStyle: {
+                            shadowBlur: 20,
+                            shadowOffsetX: 0,
+                            shadowColor: 'rgba(0, 0, 0, 0.8)'
+                        }
+                    }
+                }
+            ]
+        };
+        if (option && typeof option === 'object') {
+            echarts.init(document.querySelector("#container")).setOption(option);
+        }
+    </script>
+</body>
+</html>

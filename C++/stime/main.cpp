@@ -1,4 +1,4 @@
-#include "head.h";
+#include "./head.h";
 
 void PringMsg()
 {
@@ -15,7 +15,7 @@ int main()
 		
 		PringMsg();
 
-		Sleep(1000);  //ÑÓ³ÙÖ´ÐÐ 1000ms = 1s;
+		Sleep(1000);  //ï¿½Ó³ï¿½Ö´ï¿½ï¿½ 1000ms = 1s;
 
 		cout << i;
 	};
